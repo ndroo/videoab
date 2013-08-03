@@ -33,6 +33,12 @@ Class Database
 			$this->_connections[$type] = $this->connect(DB_HOST,DB_USER,DB_PASS,DB_NAME);
 			$con = $this->_connections[$type];
 		}
+		else if($type == "read")
+		{
+			$this->_connections[$type] = $this->connect(DB_READ_HOST,DB_USER,DB_PASS,DB_NAME);
+			$con = $this->_connections[$type];
+		}
+
 		else
 		{
 			error_log("Unknown database connection type: $type");

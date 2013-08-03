@@ -37,3 +37,6 @@ if (!isset($GLOBALS['db'])) {
 	    $GLOBALS['db'] = new Database();
 }
 
+//we need a session (if we dont have one already)
+ini_set('session.gc-maxlifetime', 86400*365); //remember people for 365 days
+session_start();

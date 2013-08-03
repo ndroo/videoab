@@ -65,7 +65,6 @@ class UserMgr
 		$obj = $res->fetchObject();
 		if(is_object($obj))
 		{
-			session_start();
 			$_SESSION['user_id'] = $obj->user_id;
 			return self::Load($obj->user_id);
 		}
@@ -75,5 +74,21 @@ class UserMgr
 	{
 		$_SESSION['user_id'] = null;
 		session_destroy();
+	}
+
+	public static function GetEmbeds($user_id)
+	{
+		$db = $GLOBALS['db'];
+		$db = $db->getConn();
+
+		$user = $db->quoteInto("user_id = ?",$user_id);
+		$sql = "select * from embeds where $user;";
+		$res = $db->query($sql);
+		$embeds = array();
+		while($obj = $res->fetchObject())
+		{
+			$embeds[] = $obj;
+		}
+		return $embeds;
 	}
 }
