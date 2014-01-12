@@ -19,6 +19,7 @@ Web Server setup
 Minimum requirements apache 2.4, PHP 5.5.4, MySQL 5.5
 
 sudo apt-get install fail2ban
+sudo apt-get install unzip
 sudo apt-get install apache2
 sudo apt-get install php5
 sudo apt-get install libapache2-mod-php5
