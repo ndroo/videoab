@@ -6,7 +6,7 @@
 	<label>Email</label>
 	<input type="text" name="email"/>
 	<label>Password</label>
-	<input type="text" name="password"/>
+	<input type="password" name="password"/>
 	<button>Signup</button>
 </form>
 <div>

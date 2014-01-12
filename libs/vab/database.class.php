@@ -1,5 +1,6 @@
 <?php
 
+//@todo refactor to singleton to get rid of all globals
 require_once 'Zend/Loader/Autoloader.php';
 $loader = Zend_Loader_Autoloader::getInstance(); 
 

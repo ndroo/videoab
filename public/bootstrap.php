@@ -34,7 +34,7 @@ include("vab/database.class.php");
 
 //create database object if not already existing
 if (!isset($GLOBALS['db'])) {
-	    $GLOBALS['db'] = new Database();
+    $GLOBALS['db'] = new Database();
 }
 
 //we need a session (if we dont have one already)
