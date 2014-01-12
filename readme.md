@@ -13,3 +13,16 @@ Future Enhancements / todo:
 * Stats should be periodically summarized and display functions should extract the results from the summarized versions rather than calculating them from the raw stats on each page load.
 * Style the admin UI
 * There is currently no security preventing users from modifying or viewing each others Embeds or Videos
+* Nothing stops this application being load balanced, however before doing so it is required that the load balancer has sticky sessions, or sessions be moved to Memcache/Redis. Moving the sessions to Memcache would be my prefered approach.
+
+Web Server setup
+Minimum requirements apache 2.4, PHP 5.5.4, MySQL 5.5
+
+sudo apt-get install fail2ban
+sudo apt-get install apache2
+sudo apt-get install php5
+sudo apt-get install libapache2-mod-php5
+sudo apt-get install mysql-client
+sudo apt-get install php-apc
+sudo a2enmod rewrite
+sudo /etc/init.d/apache2 restart
